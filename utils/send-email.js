@@ -1,7 +1,7 @@
 
 import dayjs from 'dayjs';
 import {emailTemplates} from './email.template.js';
-import transporter,{ accountEmail } from '../nodemailer.js';
+import transporter,{ accountEmail } from '../config/nodemailer.js';
 
 export const sendReminderEmail=async ({to,type,subscription})=>{
 

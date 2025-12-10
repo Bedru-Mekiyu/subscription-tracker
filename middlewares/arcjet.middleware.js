@@ -8,7 +8,6 @@ const arcjetMiddleware = async (req, res, next) => {
       if (decision.reason.isRateLimit())
         return res.status(429).json({ error: "Rate limit exceeded" });
 
-      // Since detectBot is in DRY_RUN, this will never trigger in dev
       if (decision.reason.isBot())
         return res.status(403).json({ error: "Bot detected" });
 

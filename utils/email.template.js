@@ -40,7 +40,7 @@ export const generateEmailTemplate = ({
                     </tr>
                 </table>
                 
-                <p style="font-size: 16px; margin-bottom: 25px;">If you'd like to make changes or cancel your subscription, please visit your <a href="${accountSettingsLink}" style="color: #4a90e2; text-decoration: none;">account settings</a> before the renewal date.</p>
+                <p style="font-size: 16px; margin-bottom: 25px;">We appreciate your continued support and hope you're enjoying the benefits of your subscription. If you'd like to make any changes, visit your <a href="${accountSettingsLink}" style="color: #4a90e2; text-decoration: none;">account settings</a> before the renewal date.</p>
                 
                 <p style="font-size: 16px; margin-top: 30px;">Need help? <a href="${supportLink}" style="color: #4a90e2; text-decoration: none;">Contact our support team</a> anytime.</p>
                 
@@ -68,27 +68,23 @@ export const generateEmailTemplate = ({
 
 export const emailTemplates = [
   {
-    label: "7 days before reminder",
-    generateSubject: (data) =>
-      `📅 Reminder: Your ${data.subscriptionName} Subscription Renews in 7 Days!`,
+    label: "Reminder 7 days before",
+    generateSubject: (data) => `📅 Reminder: Your ${data.subscriptionName} Subscription Renews in 7 Days!`,
     generateBody: (data) => generateEmailTemplate({ ...data, daysLeft: 7 }),
   },
   {
-    label: "5 days before reminder",
-    generateSubject: (data) =>
-      `⏳ ${data.subscriptionName} Renews in 5 Days – Stay Subscribed!`,
+    label: "Reminder 5 days before",
+    generateSubject: (data) => `⏳ ${data.subscriptionName} Renews in 5 Days – Stay Subscribed!`,
     generateBody: (data) => generateEmailTemplate({ ...data, daysLeft: 5 }),
   },
   {
-    label: "2 days before reminder",
-    generateSubject: (data) =>
-      `🚀 2 Days Left!  ${data.subscriptionName} Subscription Renewal`,
+    label: "Reminder 2 days before",
+    generateSubject: (data) => `🚀 2 Days Left!  ${data.subscriptionName} Subscription Renewal`,
     generateBody: (data) => generateEmailTemplate({ ...data, daysLeft: 2 }),
   },
   {
-    label: "1 days before reminder",
-    generateSubject: (data) =>
-      `⚡ Final Reminder: ${data.subscriptionName} Renews Tomorrow!`,
+    label: "Reminder 1 days before",
+    generateSubject: (data) => `⚡ Final Reminder: ${data.subscriptionName} Renews Tomorrow!`,
     generateBody: (data) => generateEmailTemplate({ ...data, daysLeft: 1 }),
   },
 ];
